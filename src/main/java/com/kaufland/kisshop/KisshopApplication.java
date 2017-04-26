@@ -6,19 +6,40 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 import java.math.BigDecimal;
 
 @SpringBootApplication
 public class KisshopApplication {
 
+	/*
+	 * Only for angular development
+	 */
+	@Bean
+	public CorsFilter corsFilter() {
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		CorsConfiguration config = new CorsConfiguration();
+		config.setAllowCredentials(true); // you USUALLY want this
+		config.addAllowedOrigin("*");
+		config.addAllowedHeader("*");
+		config.addAllowedMethod("GET");
+		config.addAllowedMethod("PUT");
+		config.addAllowedMethod("POST");
+		config.addAllowedMethod("DELETE");
+		source.registerCorsConfiguration("/**", config);
+		return new CorsFilter(source);
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(KisshopApplication.class, args);
 	}
 }
-
 
 @Component
 class ApplicationRunner implements CommandLineRunner {
@@ -29,10 +50,8 @@ class ApplicationRunner implements CommandLineRunner {
 	@Autowired
 	ApplicationContext ctx;
 
-
 	@Override
 	public void run(String... args) throws Exception {
-
 		articleRepository.save(createArticle("Tafelapfel Pink Lady", "zwischen 130 - 230 g", 0.46, "apfel.png"));
 		articleRepository.save(createArticle("K-Bio Bananen", "Pro Stück mindestens 160 g", 0.29, "bananen.png"));
 		articleRepository.save(createArticle("K-Bio Erdbeeren", "Pro Stück mindestens 30g", 0.09, "erdbeeren.png"));

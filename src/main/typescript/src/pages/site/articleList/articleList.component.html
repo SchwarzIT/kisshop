@@ -1,0 +1,51 @@
+<div class="container">
+  <h1 class="headingArticleList">{{ headline }}</h1>
+
+  <div class="row">
+    <div class="col-3" *ngFor="let article of articles | orderBy: 'name'; let i = index">
+      <div class="card hoverable" [ngClass]="{'isInCart' : article.isInCart}">
+        <div class="card-image-parent">
+          <div class="card-image">
+            <img src="data:image/png;base64,{{ article.image }}"
+                 alt="{{ article.name }}"
+                 onerror="this.src='/assets/img/noImagePlaceholder.png'"/>
+          </div>
+
+          <div class="card-image-cart" *ngIf="article.numberInCart > 0">
+            <div class="outer">
+              <div class="middle">
+                <div class="inner">
+                  <span class="card-image-cart-number">{{ article.numberInCart}}</span>
+                  <span class="card-image-cart-text">In Ihrem<br/>Warenkorb</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-block">
+          <h4 class="card-title">{{ article.name }}</h4>
+          <p class="card-text">{{ article.description }}</p>
+
+          <p class="card-price">{{article.price | currency : 'EUR' : true }}</p>
+
+          <div class="card-cart" *ngIf="article.numberInCart <= 0">
+            <img *ngIf="!article.isInCart" (click)="addArticleToCart(article)" src="/assets/icons/shopping-cart.svg"
+                 class="icon"/>
+          </div>
+
+          <div class="card-cart-number" *ngIf="article.numberInCart > 0">
+            <button class="btn btn-tertiary btn-cart" (click)="decreaseArticleNumber(article)">
+              <img src="/assets/icons/remove-middle.svg" class="icon" />
+            </button>
+            <button class="btn btn-tertiary btn-cart" (click)="increaseArticleNumber(article)">
+              <img src="/assets/icons/add-middle.svg" class="icon" />
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

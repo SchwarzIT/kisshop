@@ -1,0 +1,51 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">{{title}}</h4>
+      <button type="button" class="close" (click)="close()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>{{message}}</p>
+
+      <ng-template [ngIf]="articles?.length > 0">
+        <div class="cart-article" *ngFor="let article of articles">
+          <div class="row">
+            <div class="cart-article-description col-6">
+              <span class="cart-article-description-name">{{ article.name }}</span>
+              <br/>
+              <span class="cart-article-description-description">{{ article.description }}</span>
+            </div>
+            <div class="cart-article-count col-2">
+              <img src="/assets/icons/add-middle.svg" class="icon" (click)="increaseArticleNumber(article)"/>
+              {{ article.numberInCart }}
+              <img src="/assets/icons/remove-middle.svg" class="icon" (click)="decreaseArticleNumber(article)"/>
+            </div>
+            <div class="cart-article-price col-2">
+              {{ article.price | currency : 'EUR' : true }}
+            </div>
+            <div class="cart-article-totalPrice col-2">
+              {{ article.numberInCart * article.price | currency : 'EUR' : true }}
+            </div>
+          </div>
+        </div>
+
+        <hr style="border: 1px solid #000;">
+
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-4">
+            <span class="cart-totalPrice-label">Gesamtbetrag</span>
+            <br/>
+            <span class="cart-MwSt-label">inkl. Mehrwertsteuer</span>
+          </div>
+          <div class="cart-totalPrice col-2">{{ cartService.totalPrice | currency : 'EUR' : true }}</div>
+        </div>
+
+        <hr style="border: 1px solid #000;">
+      </ng-template>
+    </div>
+    <div class="modal-footer" *ngIf="articles?.length > 0">
+      <button type="button" class="btn btn-quaternary" (click)="confirm()">Jetzt bestellen</button>
+    </div>
+  </div>
+</div>

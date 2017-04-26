@@ -1,0 +1,72 @@
+@import "../../../styles";
+
+.header-top {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.header-logo {
+  float: left;
+  width: 100px;
+}
+
+.header-logo img {
+  height: 84px;
+  width: auto;
+}
+
+.header-navigation,
+.header-right {
+  height: 84px;
+  position: relative;
+  font-size: 14px;
+  line-height: normal;
+}
+
+.header-right > .header-content {
+  right: 0;
+}
+
+.header-content {
+  position: absolute;
+  bottom: 0;
+}
+
+.header-navigation {
+  float: left;
+  width: 80%;
+}
+
+.header-right {
+  float: left;
+  width: calc(20% - 100px);
+  text-align: right;
+}
+
+.header-navigation ul {
+  list-style: none;
+}
+
+.header-navigation li {
+  float: left;
+  margin-right: 20px;
+}
+
+.header-navigation a {
+  color: $secondary-brand-color-middle;
+}
+
+.header-image {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.cart-info {
+  float: right;
+  font-size: 14px;
+  line-height: 1.0;
+  margin-left: 15px;
+  width: 60px;
+}

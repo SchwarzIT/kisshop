@@ -1,0 +1,50 @@
+@import "../../../styles";
+
+.footer {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+  background: $secondary-brand-color-lighter;
+  height: 210px;
+}
+
+.footerRow {
+  padding-top: 60px;
+}
+
+.iconBig {
+  height: 75px;
+}
+
+.iconSubtitle {
+  color: $secondary-brand-color-dark;
+  font-weight: 700;
+  font-size: 18px;
+  padding-top: 15px;
+}
+
+.h1 {
+  margin-top: 100px;
+}
+
+.footer-table {
+  width: 100%;
+  margin-top: 50px;
+  color: $secondary-brand-color-middle;
+  text-align: center;
+}
+
+.footer-logo {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.footer-logo img {
+  height: 100px;
+  width: auto;
+}
+
+.iconFooter {
+  height: 48px;
+}

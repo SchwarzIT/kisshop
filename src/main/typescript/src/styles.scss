@@ -1,0 +1,407 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Schriften */
+@font-face {
+  fonf-family: 'Kaufland';
+  src: url('/assets/fonts/Kaufland-Regular.svg') format('svg');
+}
+
+@font-face {
+  fonf-family: 'Kaufland-Light';
+  src: url('/assets/fonts/Kaufland-Light.svg') format('svg');
+}
+
+/* Farben */
+$primary-brand-color: #E3000F;
+$secondary-brand-color-dark: #424242;
+$secondary-brand-color-middle: #8E8E8E;
+$secondary-brand-color-light: #D6D6D6;
+$secondary-brand-color-lighter: #EDEDED;
+
+$additional-color: #2196F3;
+$disabled-color: #EFEFEF;
+
+$confirmation-color-1: #4AB54F;
+$warning-color-1: #FFCA28;
+$error-color-1: #F44336;
+
+button, input, optgroup, select, textarea {
+  font-family: 'Kaufland-Light';
+}
+
+html, body {
+  font-family: 'Kaufland-Light';
+  font-size: 16px;
+  line-height: 26px;
+  height: 100%;
+}
+
+.container {
+  width: 1400px;
+}
+
+table {
+  font-size: 18px !important;
+  line-height: 2.5;
+}
+
+/* Headlines */
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: $secondary-brand-color-dark;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.headline {
+  font-size: 50px;
+}
+
+.subHeadline {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+table {
+  font-size: 14px;
+}
+
+.icon {
+  height: 24px;
+}
+
+.iconMiddle {
+  height: 50px;
+}
+
+/* Formulare */
+label {
+  font-size: 14px;
+  color: $secondary-brand-color-dark;
+}
+
+.form-text {
+  font-size: 14px;
+  color: $secondary-brand-color-middle;
+}
+
+.form-control {
+  height: 48px;
+  border: 2px solid $secondary-brand-color-light;
+  border-radius: 0px;
+  font-size: 16px;
+  color: $secondary-brand-color-dark;
+}
+
+.form-control:focus {
+  border: 2px solid $secondary-brand-color-middle;
+}
+
+.has-error .form-text {
+  color: $error-color-1;
+}
+
+.has-error .form-control {
+  border: 2px solid $error-color-1;
+  background: #FDE7E6;
+}
+
+.has-warning .form-text {
+  color: $warning-color-1;
+}
+
+.has-warning .form-control {
+  border: 2px solid $warning-color-1;
+  background: #f9fde6;
+}
+
+.has-success .form-text {
+  color: $confirmation-color-1;
+}
+
+.has-success .form-control {
+  border: 2px solid $confirmation-color-1;
+  background: #e8f6e8;
+}
+
+.form-control:disabled {
+  background: $disabled-color;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 0px;
+}
+
+.btn a {
+  color: inherit;
+}
+
+.btn a:hover {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: $additional-color;
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  background: #1c71f3;
+  border-color: transparent;
+}
+
+.btn-primary.disabled {
+  color: #fff;
+}
+
+.btn-secondary {
+  background: $secondary-brand-color-dark;
+  color: #fff;
+  border-color: transparent;
+}
+
+.btn-secondary.disabled {
+  color: #000;
+}
+
+.btn-tertiary {
+  background: $secondary-brand-color-light;
+  color: #000;
+}
+
+.btn-tertiary:hover {
+  background: $secondary-brand-color-middle;
+  color: #fff;
+}
+
+.btn-tertiary.disabled {
+  color: #000;
+}
+
+.btn-quaternary {
+  background: $secondary-brand-color-dark;
+  color: #fff;
+}
+
+.btn-quaternary:hover {
+  background: $confirmation-color-1;
+  color: #fff;
+}
+
+.btn-quaternary.disabled {
+  color: #000;
+}
+
+.btn-cancel {
+  background: $error-color-1;
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background: #939393;
+  border-color: transparent;
+}
+
+.btn-cancel.disabled {
+  color: #fff;
+}
+
+.btn-save {
+  background: $confirmation-color-1;
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-save:hover {
+  background: #939393;
+  border-color: transparent;
+}
+
+.btn-save.disabled {
+  color: #fff;
+}
+
+/* Dropdown */
+.dropdown-toggle {
+  background: #fff;
+  border: 2px solid $secondary-brand-color-light;
+  padding: 10px;
+}
+
+.dropdown-toggle:focus {
+  border: 2px solid $secondary-brand-color-middle;
+}
+
+.dropdown-menu {
+  padding: 0px;
+  border-radius: 0px;
+}
+
+.dropdown-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $disabled-color;
+}
+
+.dropdown-item:hover {
+  background: $disabled-color;
+}
+
+.dropdown-item .disabled {
+  color: $disabled-color;
+}
+
+/* Hoverable Images */
+.hoverable {
+  transform: translateZ(1) scale(1);
+  -webkit-transform: translateZ(1) scale(1);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-backface-visibility: hidden;
+}
+
+.hoverable:hover {
+  transform: translateZ(0) scale(1.025);
+  -webkit-transform: translateZ(0) scale(1.025);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-backface-visibility: hidden;
+}
+
+.hoverableBig {
+  transform: translateZ(1) scale(1);
+  -webkit-transform: translateZ(1) scale(1);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-backface-visibility: hidden;
+}
+
+.hoverableBig:hover {
+  transform: translateZ(0) scale(1.25);
+  -webkit-transform: translateZ(0) scale(1.25);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Spacer */
+.spacer10 {
+  height: 10px;
+}
+
+.spacer40 {
+  height: 40px;
+}
+
+.spacer50 {
+  height: 50px;
+}
+
+.spacer80 {
+  height: 80px;
+}
+
+.spacer100 {
+  height: 100px;
+}
+
+/* Bootstrap Card */
+.card {
+  border: 2px solid rgba(0, 0, 0, .125);
+  border-radius: 0.10%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(176, 176, 176, 0.5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(176, 176, 176, 0.5);
+  box-shadow: 0px 0px 10px 0px rgba(176, 176, 176, 0.5);
+}
+
+.card-block {
+  padding: 0.25rem;
+}
+
+.card-image {
+  height: 200px;
+  overflow: hidden;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.card-image img {
+  max-height: 200px;
+  width: auto;
+  max-width: 100%;
+}
+
+.card-cart {
+  margin: auto;
+}
+
+.card-image-parent {
+  position: relative;
+  height: 200px;
+}
+
+.card-image-cart {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.75);
+  height: 100%;
+  width: 100%;
+}
+
+.card-image-cart-number {
+  font-size: 2.375rem;
+  opacity: 1;
+  display: block;
+  font-weight: 700;
+  color: $secondary-brand-color-dark;
+}
+
+.card-image-cart-text {
+  line-height: .875rem;
+  margin-top: .6875rem;
+  display: block;
+  font-weight: 700;
+  color: $secondary-brand-color-dark;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* Modal */
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 50%;
+  }
+}

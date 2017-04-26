@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="header-top">
+    <div class="header-logo">
+      <a href="/">
+        <img src="/assets/img/kl_logo.svg"/>
+      </a>
+    </div>
+
+    <div class="header-navigation">
+      <div class="header-content">
+        <ul>
+          <li><a href="/">Sortiment</a></li>
+          <li><a href="#" (click)="showCartModal()">Warenkorb</a></li>
+          <li><a href="/admin">Administration</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="header-content">
+        <!--
+        <img src="/assets/icons/search.svg" class="icon"/>
+        -->
+        <ng-template [ngIf]="showCart == true">
+          <img src="/assets/icons/warenkorb.png" (click)="showCartModal()" class="clickable icon"/>
+          <div class="cart-info">
+            <b>{{ cartService.totalPrice | currency : 'EUR' : true }}</b><br/>
+            {{ cartService.cart.length }} Artikel
+          </div>
+        </ng-template>
+
+      </div>
+    </div>
+
+    <div style="clear: both"></div>
+  </div>
+
+  <div class="header-image" [ngStyle]="{'background-image': 'url(' + headerImage + ')'}"></div>
+
+</div>

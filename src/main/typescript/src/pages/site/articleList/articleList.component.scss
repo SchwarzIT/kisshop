@@ -1,0 +1,39 @@
+@import "../../../styles";
+
+.headingArticleList {
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 18px;
+}
+
+.card-price {
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1em;
+}
+
+.isInCart {
+  border: 2px solid $confirmation-color-1;
+}
+
+.card-cart-number {
+  text-align: right;
+}
+
+.btn-cart {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+
+.btn-cart:hover {
+  background: $confirmation-color-1;
+}

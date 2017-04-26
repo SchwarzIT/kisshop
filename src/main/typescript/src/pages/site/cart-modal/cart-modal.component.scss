@@ -1,0 +1,41 @@
+@import "../../../styles";
+
+.cart-article-description-name {
+  font-weight: 700;
+}
+
+.cart-article-description-description {
+  font-size: 0.75em;
+}
+
+.cart-article-count,
+.cart-article-price,
+.cart-article-totalPrice {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.cart-article-count {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.cart-article-totalPrice {
+  font-weight: bold;
+}
+
+.cart-totalPrice-label {
+  font-size: 1.3125rem;
+  font-weight: 700;
+}
+
+.cart-MwSt-label {
+  font-size: 13px;
+}
+
+.cart-totalPrice {
+  font-size: 1.3125rem;
+  text-align: center;
+  font-weight: 800;
+  color: $secondary-brand-color-dark;
+}

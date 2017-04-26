@@ -1,0 +1,75 @@
+<div class="container">
+  <h1 *ngIf="!detailLink">Neuer Artikel anlegen</h1>
+  <h1 *ngIf="detailLink">Artikel bearbeiten</h1>
+
+  <form [formGroup]="articleForm" class="formComponent">
+
+    <!-- Bild -->
+    <div class="form-group row">
+      <label class="col-2">Bild</label>
+      <input type="file"
+             class="form-control col-10"
+             formControlName="image"
+             (change)="convertImageToBase64($event)">
+    </div>
+
+    <!-- Name -->
+    <div class="form-group row"
+         [ngClass]="{'has-error' : articleForm.get('name').touched && articleForm.get('name').status == 'INVALID'}">
+
+      <label class="col-2">Name</label>
+      <input type="text" class="form-control col-10" formControlName="name">
+
+      <div class="col-2"></div>
+      <small class="form-text col-10"
+             *ngIf="articleForm.get('name').touched && articleForm.get('name').status == 'INVALID'">
+        Bitte gebe einen gültigen Namen für den Artikel sein
+      </small>
+    </div>
+
+    <!-- Beschreibung -->
+    <div class="form-group row"
+         [ngClass]="{'has-error' : articleForm.get('description').touched && articleForm.get('description').status == 'INVALID'}">
+
+      <label class="col-2">Beschreibung</label>
+      <input type="text" class="form-control col-10" formControlName="description">
+
+      <div class="col-2"></div>
+      <small class="form-text col-10"
+             *ngIf="articleForm.get('description').touched && articleForm.get('description').status == 'INVALID'">
+        Bitte gebe eine kurze Beschreibung zum Artikel ein
+      </small>
+    </div>
+
+    <!-- Preis -->
+    <div class="form-group row"
+         [ngClass]="{'has-error' : articleForm.get('price').touched && articleForm.get('price').status == 'INVALID'}">
+
+      <label class="col-2">Preis</label>
+      <input type="number" class="form-control col-10" formControlName="price" step="0.01" min="0.01" value="0.00">
+
+      <div class="col-2"></div>
+      <small class="form-text col-10"
+             *ngIf="articleForm.get('price').touched && articleForm.get('price').status == 'INVALID'">
+        Bitte gebe einen gültigen Preis ein
+      </small>
+    </div>
+
+    <!-- Buttons -->
+    <div class="row">
+      <div class="col-6">
+        <button class="btn btn-cancel" (click)="cancelEdit()">
+          Abbrechen
+        </button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-save" (click)="saveArticle()" [disabled]="articleForm.status == 'INVALID'"
+                type="submit">
+          Speichern
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
