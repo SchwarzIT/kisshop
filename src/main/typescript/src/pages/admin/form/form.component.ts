@@ -19,16 +19,16 @@ export class FormComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private articleService: ArticleService, private imageService: ImageService) {
 
+  }
+
+  ngOnInit() {
+
     this.articleForm = this.fb.group({
-      'name': new FormControl('', Validators.required),
+      'name': new FormControl('', [Validators.required, Validators.maxLength(25)]),
       'description': new FormControl('', Validators.required),
       'price': new FormControl('', Validators.required),
       'image': new FormControl('')
     });
-
-  }
-
-  ngOnInit() {
 
     this.route.params.subscribe(
       (params) => {

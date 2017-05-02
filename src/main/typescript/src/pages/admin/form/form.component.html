@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container app-form">
   <h1 *ngIf="!detailLink">Neuer Artikel anlegen</h1>
   <h1 *ngIf="detailLink">Artikel bearbeiten</h1>
 
@@ -7,17 +7,22 @@
     <!-- Bild -->
     <div class="form-group row">
       <label class="col-2">Bild</label>
-      <input type="file"
-             class="form-control col-10"
-             formControlName="image"
-             (change)="convertImageToBase64($event)">
+
+      <div class="col-10" style="padding-left: 0px; padding-right: 0px;">
+        <img src="data:image/png;base64,{{ image.content }}" style="height: 154px;"
+             onerror="this.src='assets/img/bildPlatzhalter.png'"/> <br/>
+        <input type="file"
+               class="form-control"
+               formControlName="image"
+               (change)="convertImageToBase64($event)">
+      </div>
     </div>
 
     <!-- Name -->
     <div class="form-group row"
          [ngClass]="{'has-error' : articleForm.get('name').touched && articleForm.get('name').status == 'INVALID'}">
 
-      <label class="col-2">Name</label>
+      <label class="col-2">Name*</label>
       <input type="text" class="form-control col-10" formControlName="name">
 
       <div class="col-2"></div>
@@ -31,7 +36,7 @@
     <div class="form-group row"
          [ngClass]="{'has-error' : articleForm.get('description').touched && articleForm.get('description').status == 'INVALID'}">
 
-      <label class="col-2">Beschreibung</label>
+      <label class="col-2">Beschreibung*</label>
       <input type="text" class="form-control col-10" formControlName="description">
 
       <div class="col-2"></div>
@@ -45,7 +50,7 @@
     <div class="form-group row"
          [ngClass]="{'has-error' : articleForm.get('price').touched && articleForm.get('price').status == 'INVALID'}">
 
-      <label class="col-2">Preis</label>
+      <label class="col-2">Preis*</label>
       <input type="number" class="form-control col-10" formControlName="price" step="0.01" min="0.01" value="0.00">
 
       <div class="col-2"></div>
@@ -56,19 +61,13 @@
     </div>
 
     <!-- Buttons -->
-    <div class="row">
-      <div class="col-6">
-        <button class="btn btn-cancel" (click)="cancelEdit()">
-          Abbrechen
-        </button>
-      </div>
-      <div class="col-6">
-        <button class="btn btn-save" (click)="saveArticle()" [disabled]="articleForm.status == 'INVALID'"
-                type="submit">
-          Speichern
-        </button>
-      </div>
-    </div>
+    <button class="btn btn-primary" (click)="saveArticle()" [disabled]="articleForm.status == 'INVALID'"
+            type="submit">
+      Speichern
+    </button>
+    <button class="btn btn-tertiary" (click)="cancelEdit()">
+      Abbrechen
+    </button>
 
   </form>
 

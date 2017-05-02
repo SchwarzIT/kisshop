@@ -1,10 +1,12 @@
-.formComponent {
-  .btn-save {
-    float: right;
+.app-form {
+
+  h1 {
+    text-align: left;
+    padding-top: 100px;
   }
 
-  .form-image-vorschau {
-    text-align: center;
-    margin-bottom: 25px;
+  .row {
+    padding-top: 25px;
   }
+
 }
