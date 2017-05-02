@@ -15,6 +15,9 @@ export class HeaderComponent {
   @Input("showCart")
   showCart: boolean = true;
 
+  @Input("showNavigation")
+  showNavigation: boolean = true;
+
   @Input("headerImage")
   headerImage: string = "/assets/img/headerImage.jpg";
 

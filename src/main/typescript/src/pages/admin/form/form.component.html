@@ -26,7 +26,7 @@
       <input type="text" class="form-control col-10" formControlName="name">
 
       <div class="col-2"></div>
-      <small class="form-text col-10"
+      <small class="form-text col-10 errorMessage"
              *ngIf="articleForm.get('name').touched && articleForm.get('name').status == 'INVALID'">
         Bitte gebe einen gültigen Namen für den Artikel sein
       </small>
@@ -40,7 +40,7 @@
       <input type="text" class="form-control col-10" formControlName="description">
 
       <div class="col-2"></div>
-      <small class="form-text col-10"
+      <small class="form-text col-10 errorMessage"
              *ngIf="articleForm.get('description').touched && articleForm.get('description').status == 'INVALID'">
         Bitte gebe eine kurze Beschreibung zum Artikel ein
       </small>
@@ -54,7 +54,7 @@
       <input type="number" class="form-control col-10" formControlName="price" step="0.01" min="0.01" value="0.00">
 
       <div class="col-2"></div>
-      <small class="form-text col-10"
+      <small class="form-text col-10 errorMessage"
              *ngIf="articleForm.get('price').touched && articleForm.get('price').status == 'INVALID'">
         Bitte gebe einen gültigen Preis ein
       </small>

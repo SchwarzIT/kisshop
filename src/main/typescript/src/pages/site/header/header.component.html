@@ -7,7 +7,7 @@
       </a>
     </div>
 
-    <div class="header-navigation">
+    <div class="header-navigation" *ngIf="showNavigation">
       <div class="header-content">
         <ul>
           <li><a href="/">Sortiment</a></li>
@@ -19,9 +19,6 @@
 
     <div class="header-right">
       <div class="header-content">
-        <!--
-        <img src="/assets/icons/search.svg" class="icon"/>
-        -->
         <ng-template [ngIf]="showCart == true">
           <img src="/assets/icons/warenkorb.png" (click)="showCartModal()" class="clickable icon"/>
           <div class="cart-info">
@@ -36,6 +33,6 @@
     <div style="clear: both"></div>
   </div>
 
-  <div class="header-image" [ngStyle]="{'background-image': 'url(' + headerImage + ')'}"></div>
+  <div class="header-image" [ngStyle]="{'background-image': 'url(' + headerImage + ')'}" *ngIf="headerImage"></div>
 
 </div>

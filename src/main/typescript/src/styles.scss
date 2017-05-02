@@ -81,7 +81,7 @@ table {
 
 /* Formulare */
 label {
-  font-size: 14px;
+  font-size: 12px;
   color: $secondary-brand-color-dark;
 }
 
@@ -91,15 +91,15 @@ label {
 }
 
 .form-control {
-  height: 48px;
-  border: 2px solid $secondary-brand-color-light;
+  height: 36px;
+  border: 1px solid $secondary-brand-color-light;
   border-radius: 0px;
   font-size: 16px;
   color: $secondary-brand-color-dark;
 }
 
 .form-control:focus {
-  border: 2px solid $secondary-brand-color-middle;
+  border: 1px solid $secondary-brand-color-middle;
 }
 
 .has-error .form-text {
@@ -107,7 +107,7 @@ label {
 }
 
 .has-error .form-control {
-  border: 2px solid $error-color-1;
+  border: 1px solid $error-color-1;
   background: #FDE7E6;
 }
 
@@ -116,7 +116,7 @@ label {
 }
 
 .has-warning .form-control {
-  border: 2px solid $warning-color-1;
+  border: 1px solid $warning-color-1;
   background: #f9fde6;
 }
 
@@ -125,12 +125,16 @@ label {
 }
 
 .has-success .form-control {
-  border: 2px solid $confirmation-color-1;
+  border: 1px solid $confirmation-color-1;
   background: #e8f6e8;
 }
 
 .form-control:disabled {
   background: $disabled-color;
+}
+
+.errorMessage {
+  margin-top: 10px;
 }
 
 /* Buttons */
@@ -231,12 +235,12 @@ label {
 /* Dropdown */
 .dropdown-toggle {
   background: #fff;
-  border: 2px solid $secondary-brand-color-light;
+  border: 1px solid $secondary-brand-color-light;
   padding: 10px;
 }
 
 .dropdown-toggle:focus {
-  border: 2px solid $secondary-brand-color-middle;
+  border: 1px solid $secondary-brand-color-middle;
 }
 
 .dropdown-menu {
@@ -314,7 +318,7 @@ label {
 
 /* Bootstrap Card */
 .card {
-  border: 2px solid rgba(0, 0, 0, .125);
+  border: 1px solid rgba(0, 0, 0, .125);
   border-radius: 0.10%;
   text-align: center;
   margin-bottom: 20px;
