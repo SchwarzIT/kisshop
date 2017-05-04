@@ -9,14 +9,9 @@ import {CartService} from "../../../services/cart.service";
 })
 export class ArticleListComponent {
 
-  @Input("articles")
-  articles: Article[] = [];
-
-  @Input("maxArticles")
-  maxArticles: number = 0;
-
-  @Input("headline")
-  headline: string = "Artikelliste";
+  @Input("articles") articles: Article[] = [];
+  @Input("maxArticles") maxArticles: number = 0;
+  @Input("headline") headline: string = "Artikelliste";
 
   constructor(private cartService: CartService) {
 

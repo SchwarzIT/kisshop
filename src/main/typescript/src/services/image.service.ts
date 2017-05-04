@@ -3,7 +3,7 @@ import {Http, RequestOptions, Headers} from "@angular/http";
 import "rxjs/add/operator/map";
 import {Observable} from "rxjs/Observable";
 import {environment} from "../environments/environment";
-import {ImageJson} from "../entities/ImageJson";
+import {Image} from "../entities/Image";
 
 @Injectable()
 export class ImageService {
@@ -18,7 +18,7 @@ export class ImageService {
   }
 
   createImage(base64Image: string) {
-    let image: ImageJson = new ImageJson();
+    let image: Image = new Image();
     image.content = base64Image;
 
     let headers = new Headers({'Content-Type': 'application/json'});

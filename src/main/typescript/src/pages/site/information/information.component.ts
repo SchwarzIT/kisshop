@@ -8,11 +8,8 @@ import {Information} from "../../../entities/Information";
 })
 export class InformationComponent implements OnInit {
 
-  @Input('information')
-  info: Information;
-
-  @Input("imageLeft")
-  imageLeft: boolean = true;
+  @Input('information') info: Information;
+  @Input("imageLeft") imageLeft: boolean = true;
 
   constructor() {
 

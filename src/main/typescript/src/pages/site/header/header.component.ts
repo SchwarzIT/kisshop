@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {CartService} from "../../../services/cart.service";
 import {DialogService} from "ng2-bootstrap-modal";
 import {CartModalComponent} from "../cart-modal/cart-modal.component";
@@ -12,15 +12,9 @@ export class HeaderComponent {
 
   cartService: CartService;
 
-  @Input("showCart")
-  showCart: boolean = true;
-
-  @Input("showNavigation")
-  showNavigation: boolean = true;
-
-  @Input("headerImage")
-  headerImage: string = "/assets/img/headerImage.jpg";
-
+  @Input("showCart") showCart: boolean = true;
+  @Input("showNavigation") showNavigation: boolean = true;
+  @Input("headerImage") headerImage: string = "/assets/img/headerImage.jpg";
 
   constructor(pCartService: CartService, private dialogService: DialogService, private router: Router) {
     this.cartService = pCartService;

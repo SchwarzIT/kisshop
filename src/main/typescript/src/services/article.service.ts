@@ -19,7 +19,7 @@ export class ArticleService {
 
   loadAllArticles(): Observable<Article[]> {
     return this.http.get(environment.backendUrl + "articles")
-      .map(response => this.mapToInternalModelArray(response.json()._embedded.articles));
+      .map(response => this.mapArrayToInternalModel(response.json()._embedded.articles));
   }
 
   loadArticle(url: string): Observable<Article> {
@@ -61,7 +61,7 @@ export class ArticleService {
     return articleJson;
   }
 
-  private mapToInternalModelArray(pJsonData: string): Article[] {
+  private mapArrayToInternalModel(pJsonData: string): Article[] {
     let articles: Article[] = [];
 
     for (let article of pJsonData) {

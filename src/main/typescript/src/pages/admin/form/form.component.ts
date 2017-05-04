@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ArticleService} from "../../../services/article.service";
 import {Article} from "../../../entities/Article";
-import {ImageJson} from "../../../entities/ImageJson";
+import {Image} from "../../../entities/Image";
 import {ImageService} from "../../../services/image.service";
 
 @Component({
@@ -14,7 +14,7 @@ import {ImageService} from "../../../services/image.service";
 export class FormComponent implements OnInit {
 
   articleForm: FormGroup;
-  private image: ImageJson = new ImageJson();
+  private image: Image = new Image();
   detailLink: string = "";
 
   constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private articleService: ArticleService, private imageService: ImageService) {
@@ -34,6 +34,8 @@ export class FormComponent implements OnInit {
     this.route.params.subscribe(
       (params) => {
         this.detailLink = params.detailLink;
+
+        // Wenn ein Artikel bearbeitet werden soll, diesen laden
         if (this.detailLink != null) {
 
           this.articleService.loadArticle(this.detailLink).subscribe(
