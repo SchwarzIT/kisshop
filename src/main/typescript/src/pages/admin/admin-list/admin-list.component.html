@@ -19,8 +19,9 @@
     <thead>
     <tr>
       <td width="10%">Bild</td>
-      <td width="60%">Bezeichnung</td>
+      <td width="50%">Bezeichnung</td>
       <td width="10%">Preis</td>
+      <td width="10%">Aktionspreis</td>
       <td width="10%"></td>
       <td width="10%"></td>
     </tr>
@@ -33,6 +34,7 @@
                onerror="this.src='/assets/img/noImagePlaceholder.png'"/></td>
       <td>{{ article.name }}</td>
       <td>{{ article.price | currency : 'EUR' : true }}</td>
+      <td>{{ article.promotionPrice | currency : 'EUR' : true }}</td>
       <td>
         <div (click)="editArticle(article)" class="tableButton">
           <img src="assets/icons/edit.svg" class="icon"/>

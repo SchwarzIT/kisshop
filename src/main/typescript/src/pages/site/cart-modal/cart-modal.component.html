@@ -21,10 +21,11 @@
               <img src="/assets/icons/remove-middle.svg" class="icon" (click)="decreaseArticleNumber(article)"/>
             </div>
             <div class="cart-article-price col-2">
-              {{ article.price | currency : 'EUR' : true }}
+              <span [ngClass]="{'price-cross' : article.promotionPrice}">{{ article.price | currency : 'EUR' : true }}</span>
+              <span class="modal-promotionPrice" *ngIf="article.promotionPrice">{{ article.promotionPrice | currency : 'EUR' : true }}</span>
             </div>
             <div class="cart-article-totalPrice col-2">
-              {{ article.numberInCart * article.price | currency : 'EUR' : true }}
+              {{ article.numberInCart * (article.promotionPrice ? article.promotionPrice : article.price) | currency : 'EUR' : true }}
             </div>
           </div>
         </div>

@@ -27,7 +27,10 @@
           <h4 class="card-title">{{ article.name }}</h4>
           <p class="card-text">{{ article.description }}</p>
 
-          <p class="card-price">{{article.price | currency : 'EUR' : true }}</p>
+          <p>
+            <span class="card-price" [ngClass]="{'price-cross' : article.promotionPrice}">{{article.price | currency : 'EUR' : true }}</span>
+            <span class="card-promotionPrice">{{article.promotionPrice | currency : 'EUR' : true }}</span>
+          </p>
 
           <div class="card-cart" *ngIf="article.numberInCart <= 0">
             <img *ngIf="!article.isInCart" (click)="addArticleToCart(article)" src="/assets/icons/shopping-cart.svg"
@@ -36,10 +39,10 @@
 
           <div class="card-cart-number" *ngIf="article.numberInCart > 0">
             <button class="btn btn-tertiary btn-cart" (click)="decreaseArticleNumber(article)">
-              <img src="/assets/icons/remove-middle.svg" class="icon" />
+              <img src="/assets/icons/remove-middle.svg" class="icon"/>
             </button>
             <button class="btn btn-tertiary btn-cart" (click)="increaseArticleNumber(article)">
-              <img src="/assets/icons/add-middle.svg" class="icon" />
+              <img src="/assets/icons/add-middle.svg" class="icon"/>
             </button>
           </div>
         </div>

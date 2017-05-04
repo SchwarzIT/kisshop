@@ -55,6 +55,7 @@ export class ArticleService {
     articleJson.name = pArticle.name;
     articleJson.description = pArticle.description;
     articleJson.price = pArticle.price;
+    articleJson.promotionPrice = pArticle.promotionPrice;
     articleJson.image = pArticle.image;
 
     return articleJson;
@@ -76,6 +77,7 @@ export class ArticleService {
     article.name = pArticle.name;
     article.description = pArticle.description;
     article.price = pArticle.price;
+    article.promotionPrice = pArticle.promotionPrice;
     article.detailLink = pArticle._links.self.href;
 
     this.imageService.loadImage(pArticle._links.image.href).subscribe(

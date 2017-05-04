@@ -27,6 +27,7 @@ export class FormComponent implements OnInit {
       'name': new FormControl('', [Validators.required, Validators.maxLength(25)]),
       'description': new FormControl('', Validators.required),
       'price': new FormControl('', Validators.required),
+      'promotionPrice': new FormControl(''),
       'image': new FormControl('')
     });
 
@@ -41,6 +42,7 @@ export class FormComponent implements OnInit {
                 "name": article.name,
                 "description": article.description,
                 "price": article.price,
+                "promotionPrice": article.promotionPrice,
                 "image": ""
               });
             },
@@ -125,6 +127,7 @@ export class FormComponent implements OnInit {
     article.name = this.articleForm.get('name').value;
     article.description = this.articleForm.get('description').value;
     article.price = this.articleForm.get('price').value;
+    article.promotionPrice = this.articleForm.get('promotionPrice').value;
     article.image = this.image.content;
     article.detailLink = this.detailLink;
 

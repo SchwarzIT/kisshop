@@ -37,3 +37,10 @@
 .btn-cart:hover {
   background: $confirmation-color-1;
 }
+
+.card-promotionPrice {
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1em;
+  color: $error-color-1;
+}

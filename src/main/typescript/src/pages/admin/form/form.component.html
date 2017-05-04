@@ -60,6 +60,20 @@
       </small>
     </div>
 
+    <!-- Aktionspreis -->
+    <div class="form-group row"
+         [ngClass]="{'has-error' : articleForm.get('promotionPrice').touched && articleForm.get('promotionPrice').status == 'INVALID'}">
+
+      <label class="col-2">Aktionspreis</label>
+      <input type="number" class="form-control col-10" formControlName="promotionPrice" step="0.01" min="0.01" value="0.00">
+
+      <div class="col-2"></div>
+      <small class="form-text col-10 errorMessage"
+             *ngIf="articleForm.get('price').touched && articleForm.get('promotionPrice').status == 'INVALID'">
+        Bitte gebe einen gültigen Aktionspreis ein
+      </small>
+    </div>
+
     <!-- Buttons -->
     <button class="btn btn-primary" (click)="saveArticle()" [disabled]="articleForm.status == 'INVALID'"
             type="submit">

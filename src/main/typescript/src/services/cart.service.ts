@@ -15,7 +15,11 @@ export class CartService {
     article.isInCart = true;
     article.numberInCart++;
 
-    this.totalPrice += parseFloat(article.price);
+    if (article.promotionPrice) {
+      this.totalPrice += parseFloat(article.promotionPrice);
+    } else {
+      this.totalPrice += parseFloat(article.price);
+    }
 
     this.cart.push(article);
   }
@@ -23,7 +27,11 @@ export class CartService {
   addExistingArticle(pArticle: Article) {
     pArticle.numberInCart++;
 
-    this.totalPrice += parseFloat(pArticle.price);
+    if (pArticle.promotionPrice) {
+      this.totalPrice += parseFloat(pArticle.promotionPrice);
+    } else {
+      this.totalPrice += parseFloat(pArticle.price);
+    }
   }
 
   removeArticle(article: Article) {
@@ -37,7 +45,12 @@ export class CartService {
 
   removeExistingArticle(pArticle: Article) {
     pArticle.numberInCart--;
-    this.totalPrice -= parseFloat(pArticle.price);
+
+    if (pArticle.promotionPrice) {
+      this.totalPrice -= parseFloat(pArticle.promotionPrice);
+    } else {
+      this.totalPrice -= parseFloat(pArticle.price);
+    }
 
     if (pArticle.numberInCart == 0) {
       this.removeArticle(pArticle);
