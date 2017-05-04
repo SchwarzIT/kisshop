@@ -1,8 +1,38 @@
+@import "../../../styles";
+
 .admin-list {
 
   h1 {
     padding-top: 100px;
     padding-bottom: 60px;
+  }
+
+  .addButton {
+    text-align: right;
+    float: left;
+    width: 50%;
+  }
+
+  .top {
+    margin-bottom: 50px;
+  }
+
+  .backLinkDiv {
+    float: left;
+    width: 50%;
+  }
+
+  .backLink {
+    color: $secondary-brand-color-dark;
+  }
+
+  .backLink:hover {
+    text-decoration: none;
+  }
+
+  tbody td {
+    border-bottom: 1px solid $secondary-brand-color-lighter;
+    font-size: 14px;
   }
 
 }

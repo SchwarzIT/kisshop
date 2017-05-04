@@ -1,4 +1,4 @@
-import {RouterModule, Routes} from "@angular/router";
+import {Routes} from "@angular/router";
 import {HomeComponent} from "../pages/site/home.component";
 import {AdminComponent} from "../pages/admin/admin.component";
 import {FormComponent} from "../pages/admin/form/form.component";
@@ -7,8 +7,9 @@ import {OrderConfirmationComponent} from "../pages/site/order-confirmation/order
 export const ROUTE_CONFIG: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    component: HomeComponent
+    // component: KArticleListComponent
   },
   {
     path: 'admin',
@@ -17,10 +18,12 @@ export const ROUTE_CONFIG: Routes = [
   {
     path: 'admin/edit',
     component: FormComponent
+    // component: KArticleFormComponent
   },
   {
     path: 'admin/edit/:detailLink',
     component: FormComponent
+    // component: KArticleFormComponent
   },
   {
     path: 'order',

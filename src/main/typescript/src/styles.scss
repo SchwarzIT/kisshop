@@ -409,3 +409,28 @@ label {
     max-width: 50%;
   }
 }
+
+/* Tabellen */
+thead {
+  font-size: 12px;
+  border-bottom: 2px solid $secondary-brand-color-dark;
+  line-height: 1;
+}
+
+tbody tr:hover {
+  background: $disabled-color;
+}
+
+thead td {
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+.table td, .table th {
+  border-top: none;
+}
+
+.tableButton {
+  cursor: pointer;
+  font-weight: bold;
+}

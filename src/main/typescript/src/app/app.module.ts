@@ -21,7 +21,7 @@ import {FormComponent} from "../pages/admin/form/form.component";
 import {RouterModule} from "@angular/router";
 import {BootstrapModalModule} from "ng2-bootstrap-modal";
 import {CartModalComponent} from "../pages/site/cart-modal/cart-modal.component";
-import { OrderConfirmationComponent } from '../pages/site/order-confirmation/order-confirmation.component';
+import {OrderConfirmationComponent} from "../pages/site/order-confirmation/order-confirmation.component";
 import {CookieModule} from "ngx-cookie";
 
 @NgModule({
@@ -59,4 +59,5 @@ import {CookieModule} from "ngx-cookie";
   entryComponents: [CartModalComponent]
 })
 export class AppModule {
+
 }

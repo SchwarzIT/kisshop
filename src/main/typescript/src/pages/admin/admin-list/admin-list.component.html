@@ -1,40 +1,51 @@
 <div class="container admin-list">
-  <h1>Vorhandene Artikel bearbeiten</h1>
+  <h1 style="text-align: left;">Vorhandene Artikel</h1>
 
-  <div style="text-align: center;">
-    <button class="btn btn-secondary" (click)="addNewArticle()">
-      Neuer Artikel hinzufügen
-    </button>
-  </div>
-
-  <div class="row">
-    <div class="col-3" *ngFor="let article of articles | orderBy: 'name'; let i = index">
-      <div class="card hoverable">
-        <div class="card-image-parent">
-          <div class="card-image">
-            <img src="data:image/png;base64,{{ article.image }}"
-                 alt="{{ article.name }}"
-                 onerror="this.src='/assets/img/noImagePlaceholder.png'"/>
-          </div>
-        </div>
-
-        <div class="card-block">
-          <h4 class="card-title">{{ article.name }}</h4>
-          <button class="btn btn-primary" (click)="editArticle(article)">Artikel bearbeiten</button>
-          <div class="spacer10"></div>
-          <button class="btn btn-cancel" (click)="removeArticle(article)">Artikel löschen</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div style="margin: 10px; text-align: center;">
-    <button class="btn btn-quaternary">
-      <a href="/">
+  <div class="top">
+    <div class="backLinkDiv">
+      <a href="/" class="backLink">
         Zurück zum Shop
       </a>
-    </button>
+    </div>
+    <div class="addButton">
+      <button class="btn btn-secondary" (click)="addNewArticle()">
+        Neuer Artikel anlegen
+      </button>
+    </div>
+    <div style="clear: both;"></div>
   </div>
 
+  <table class="table">
+    <thead>
+    <tr>
+      <td width="10%">Bild</td>
+      <td width="60%">Bezeichnung</td>
+      <td width="10%">Preis</td>
+      <td width="10%"></td>
+      <td width="10%"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let article of articles | orderBy: 'name'">
+      <td><img src="data:image/png;base64,{{ article.image }}"
+               alt="{{ article.name }}"
+               class="icon"
+               onerror="this.src='/assets/img/noImagePlaceholder.png'"/></td>
+      <td>{{ article.name }}</td>
+      <td>{{ article.price | currency : 'EUR' : true }}</td>
+      <td>
+        <div (click)="editArticle(article)" class="tableButton">
+          <img src="assets/icons/edit.svg" class="icon"/>
+          bearbeiten
+        </div>
+      </td>
+      <td>
+        <div (click)="removeArticle(article)" class="tableButton">
+          <img src="assets/icons/remove-circle.svg" class="icon"/>
+          löschen
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
