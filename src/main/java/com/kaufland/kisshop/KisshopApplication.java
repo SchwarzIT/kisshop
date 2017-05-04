@@ -52,17 +52,17 @@ class ApplicationRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		articleRepository.save(createArticle("Tafelapfel Pink Lady", "zwischen 130 - 230 g", 0.46, "apfel.png"));
-		articleRepository.save(createArticle("K-Bio Bananen", "Pro Stück mindestens 160 g", 0.29, "bananen.png"));
-		articleRepository.save(createArticle("K-Bio Erdbeeren", "Pro Stück mindestens 30g", 0.09, "erdbeeren.png"));
-		articleRepository.save(createArticle("Spreewälder Gurken", "520g Becher", 1.99, "essiggurken.png"));
-		articleRepository.save(createArticle("Kiwi", "Enthält viel Vitamin C", 0.45, "kiwi.png"));
-		articleRepository.save(createArticle("Orangen", "Süß und saftig im Geschmack", 2.15, "orangen.png"));
-		articleRepository.save(createArticle("Pfirsich", "Sehr gesund", 0.39, "pfirsich.png"));
-		articleRepository.save(createArticle("Rispentomaten", "Feines Aroma", 2.09, "tomaten.png"));
+		articleRepository.save(createArticle("Tafelapfel Pink Lady", "zwischen 130 - 230 g", 0.46, null, "apfel.png"));
+		articleRepository.save(createArticle("K-Bio Bananen", "Pro Stück mindestens 160 g", 0.29, 0.25, "bananen.png"));
+		articleRepository.save(createArticle("K-Bio Erdbeeren", "Pro Stück mindestens 30g", 0.09, null, "erdbeeren.png"));
+		articleRepository.save(createArticle("Spreewälder Gurken", "520g Becher", 1.99, 1.49, "essiggurken.png"));
+		articleRepository.save(createArticle("Kiwi", "Enthält viel Vitamin C", 0.45, null, "kiwi.png"));
+		articleRepository.save(createArticle("Orangen", "Süß und saftig im Geschmack", 2.15, null, "orangen.png"));
+		articleRepository.save(createArticle("Pfirsich", "Sehr gesund", 0.39, null, "pfirsich.png"));
+		articleRepository.save(createArticle("Rispentomaten", "Feines Aroma", 2.09, 1.99, "tomaten.png"));
 	}
 
-	private Article createArticle(String pName, String pDescription, double pPrice, String pImageName) throws Exception {
+	private Article createArticle(String pName, String pDescription, double pPrice, Double pPromotionPrice, String pImageName) throws Exception {
 		Article article = new Article();
 
 		Resource template = ctx.getResource("classpath:data/" + pImageName);
@@ -71,6 +71,9 @@ class ApplicationRunner implements CommandLineRunner {
 		article.setName(pName);
 		article.setDescription(pDescription);
 		article.setPrice(new BigDecimal(pPrice));
+		if (pPromotionPrice != null) {
+			article.setPromotionPrice(new BigDecimal(pPromotionPrice));
+		}
 		article.setImage(new Image(image));
 
 		return article;
