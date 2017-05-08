@@ -1,17 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* Schriften */
+/* Fonts */
 @font-face {
-  fonf-family: 'Kaufland';
-  src: url('/assets/fonts/Kaufland-Regular.svg') format('svg');
+  font-family: 'Kaufland-Regular';
+  src: url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.eot');
+  src: url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.woff2') format('woff2'),
+  url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.woff') format('woff'),
+  url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.ttf') format('truetype'),
+  url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.svg#Kaufland-Regular') format('svg'),
+  url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@font-face {
-  fonf-family: 'Kaufland-Light';
-  src: url('/assets/fonts/Kaufland-Light.svg') format('svg');
-}
-
-/* Farben */
+/* Colors */
 $primary-brand-color: #E3000F;
 $secondary-brand-color-dark: #424242;
 $secondary-brand-color-middle: #8E8E8E;
@@ -26,11 +28,11 @@ $warning-color-1: #FFCA28;
 $error-color-1: #F44336;
 
 button, input, optgroup, select, textarea {
-  font-family: 'Kaufland-Light';
+  font-family: 'Kaufland-Regular';
 }
 
 html, body {
-  font-family: 'Kaufland-Light';
+  font-family: 'Kaufland-Regular';
   font-size: 16px;
   line-height: 26px;
   height: 100%;
@@ -79,7 +81,7 @@ table {
   height: 50px;
 }
 
-/* Formulare */
+/* Forms */
 label {
   font-size: 12px;
   color: $secondary-brand-color-dark;
