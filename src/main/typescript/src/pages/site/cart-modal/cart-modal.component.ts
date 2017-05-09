@@ -5,7 +5,6 @@ import {CartService} from "../../../services/cart.service";
 
 export interface ConfirmModel {
   title: string;
-  message: string;
   articles: Article[];
 }
 
@@ -17,7 +16,7 @@ export interface ConfirmModel {
 export class CartModalComponent extends DialogComponent<ConfirmModel, boolean> implements ConfirmModel {
 
   title: string = "";
-  message: string = "";
+  message: string = "Ihr Warenkorb ist leer";
   articles: Article[] = [];
 
   constructor(dialogService: DialogService, private cartService: CartService) {

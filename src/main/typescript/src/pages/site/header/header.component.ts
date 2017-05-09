@@ -24,7 +24,6 @@ export class HeaderComponent {
 
     this.dialogService.addDialog(CartModalComponent, {
       title: 'Warenkorb',
-      message: this.cartService.cart.length <= 0 ? 'Ihr Warenkorb ist leer' : '',
       articles: this.cartService.cart
     }).subscribe((isConfirmed) => {
 
