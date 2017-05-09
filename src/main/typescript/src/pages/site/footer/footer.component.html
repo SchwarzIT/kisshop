@@ -3,25 +3,11 @@
   <div class="container ">
     <div class="row footerRow">
 
-      <div class="col-3">
-        <img src="/assets/icons/delivery-in-progress.svg" class="iconFooter hoverableBig"/>
-        <div class="iconSubtitle">Schnelle Lieferung</div>
+      <div class="col-3" *ngFor="let v of values">
+        <img src="/assets/icons/{{ v.icon }}" class="iconFooter hoverableBig"/>
+        <div class="iconSubtitle">{{ v.text }}</div>
       </div>
 
-      <div class="col-3">
-        <img src="/assets/icons/vegetables.svg" class="iconFooter hoverableBig"/>
-        <div class="iconSubtitle">Aus unserer Region</div>
-      </div>
-
-      <div class="col-3">
-        <img src="/assets/icons/heart.svg" class="iconFooter hoverableBig"/>
-        <div class="iconSubtitle">Wir lieben Kaufland</div>
-      </div>
-
-      <div class="col-3">
-        <img src="/assets/icons/chat_2.svg" class="iconFooter hoverableBig"/>
-        <div class="iconSubtitle">24/7 Support</div>
-      </div>
     </div>
   </div>
 

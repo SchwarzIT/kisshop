@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  values: any;
+
+  constructor() {
+
+    this.values = [
+      {icon: "delivery-in-progress.svg", text: "Schnelle Lieferung"},
+      {icon: "vegetables.svg", text: "Aus unserer Region"},
+      {icon: "heart.svg", text: "Wir lieben Kaufland"},
+      {icon: "chat_2.svg", text: "24/7 Support"}
+    ];
+
+  }
 
   ngOnInit() {
 
