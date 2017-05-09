@@ -23,5 +23,5 @@ dist/
 nbdist/
 .nb-gradle/
 
-node_modules
-target
+node_modules/
+src/main/resources/static/

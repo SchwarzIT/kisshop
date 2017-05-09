@@ -1,4 +1,5 @@
 import {Component, OnInit} from "@angular/core";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-order-confirmation',
@@ -9,12 +10,16 @@ export class OrderConfirmationComponent implements OnInit {
 
   deliveryDate: any = new Date();
 
-  constructor() {
+  constructor(private router: Router) {
 
   }
 
   ngOnInit() {
-    this.deliveryDate.setDate(this.deliveryDate.getDate() + 2);
+    this.deliveryDate.setDate(this.deliveryDate.getDate() + 1);
+  }
+
+  redirectToShop() {
+    this.router.navigate(["/"]);
   }
 
 }

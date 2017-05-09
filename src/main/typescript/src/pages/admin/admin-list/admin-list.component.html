@@ -28,10 +28,13 @@
     </thead>
     <tbody>
     <tr *ngFor="let article of articles | orderBy: 'name'">
-      <td><img src="data:image/png;base64,{{ article.image }}"
-               alt="{{ article.name }}"
-               class="icon"
-               onerror="this.src='/assets/img/noImagePlaceholder.png'"/></td>
+      <td>
+        <img src="data:image/png;base64,{{ article.image }}"
+             alt="{{ article.name }}"
+             *ngIf="article.image"
+             class="icon"/>
+        <img src="/assets/img/noImagePlaceholder.png" *ngIf="!article.image" class="icon"/>
+      </td>
       <td>{{ article.name }}</td>
       <td>{{ article.price | currency : 'EUR' : true }}</td>
       <td>{{ article.promotionPrice | currency : 'EUR' : true }}</td>

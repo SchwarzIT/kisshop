@@ -2,15 +2,8 @@
 
 /* Fonts */
 @font-face {
-  font-family: 'Kaufland-Regular';
-  src: url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.eot');
-  src: url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.woff2') format('woff2'),
-  url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.woff') format('woff'),
-  url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.ttf') format('truetype'),
-  url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.svg#Kaufland-Regular') format('svg'),
-  url('/assets/fonts/Kaufland-Regular/Kaufland-Regular.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Kaufland-Light';
+  src: url('/assets/fonts/Kaufland-Light.ttf') format('truetype');
 }
 
 /* Colors */
@@ -28,11 +21,11 @@ $warning-color-1: #FFCA28;
 $error-color-1: #F44336;
 
 button, input, optgroup, select, textarea {
-  font-family: 'Kaufland-Regular';
+  font-family: 'Kaufland-Light';
 }
 
 html, body {
-  font-family: 'Kaufland-Regular';
+  font-family: 'Kaufland-Light';
   font-size: 16px;
   line-height: 26px;
   height: 100%;
@@ -172,6 +165,12 @@ label {
   border-color: transparent;
 }
 
+.btn-secondary:hover {
+  background: $confirmation-color-1;
+  color: #fff;
+  border-color: transparent;
+}
+
 .btn-secondary.disabled {
   color: #000;
 }
@@ -187,20 +186,6 @@ label {
 }
 
 .btn-tertiary.disabled {
-  color: #000;
-}
-
-.btn-quaternary {
-  background: $secondary-brand-color-dark;
-  color: #fff;
-}
-
-.btn-quaternary:hover {
-  background: $confirmation-color-1;
-  color: #fff;
-}
-
-.btn-quaternary.disabled {
   color: #000;
 }
 
@@ -417,17 +402,17 @@ label {
 }
 
 /* Tabellen */
-thead {
+.table thead {
   font-size: 12px;
   border-bottom: 2px solid $secondary-brand-color-dark;
   line-height: 1;
 }
 
-tbody tr:hover {
+.table tbody tr:hover {
   background: $disabled-color;
 }
 
-thead td {
+.table thead td {
   padding-top: 24px;
   padding-bottom: 12px;
 }

@@ -7,8 +7,8 @@
         <div class="card-image-parent">
           <div class="card-image">
             <img src="data:image/png;base64,{{ article.image }}"
-                 alt="{{ article.name }}"
-                 onerror="this.src='/assets/img/noImagePlaceholder.png'"/>
+                 alt="{{ article.name }}" *ngIf="article.image"/>
+            <img src="/assets/img/noImagePlaceholder.png" *ngIf="!article.image"/>
           </div>
 
           <div class="card-image-cart" *ngIf="article.numberInCart > 0">

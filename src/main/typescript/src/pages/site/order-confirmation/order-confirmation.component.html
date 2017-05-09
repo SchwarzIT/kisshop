@@ -13,10 +13,8 @@
   <p><b>Voraussichtliches Lieferdatum: </b>{{ deliveryDate | date : 'fullDate' }}</p>
 
   <p style="text-align: center;">
-    <button class="btn btn-quaternary">
-      <a href="/">
-        Weiter einkaufen
-      </a>
+    <button class="btn btn-secondary" (click)="redirectToShop()">
+      <a href="/">Weiter einkaufen</a>
     </button>
   </p>
 </div>
