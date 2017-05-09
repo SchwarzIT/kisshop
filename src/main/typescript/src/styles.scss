@@ -53,6 +53,11 @@ h2 {
   font-weight: bold;
 }
 
+.heading {
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+
 .headline {
   font-size: 50px;
 }
@@ -135,6 +140,7 @@ label {
 /* Buttons */
 .btn {
   border-radius: 0px;
+  cursor: pointer;
 }
 
 .btn a {
