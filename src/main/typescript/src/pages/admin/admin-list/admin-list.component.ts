@@ -12,6 +12,7 @@ import {Router} from "@angular/router";
 export class AdminListComponent implements OnInit {
 
   articles: Article[] = [];
+  searchArticle: any = [];
 
   constructor(private articleService: ArticleService, private router: Router) {
   }
@@ -36,7 +37,7 @@ export class AdminListComponent implements OnInit {
   }
 
   removeArticle(pArticle: Article) {
-    if(confirm("Diesen Artikel löschen?")) {
+    if (confirm("Diesen Artikel löschen?")) {
       this.articleService.removeArticle(pArticle).subscribe(
         (response) => {
           window.location.reload();

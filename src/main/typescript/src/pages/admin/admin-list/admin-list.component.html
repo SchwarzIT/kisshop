@@ -15,6 +15,11 @@
     <div style="clear: both;"></div>
   </div>
 
+  <div class="input-group searchInput">
+    <span class="input-group-addon"><img src="assets/icons/search.svg" class="icon" /></span>
+    <input type="text" class="form-control" placeholder="Artikel suchen" [(ngModel)]="searchArticle.name">
+  </div>
+
   <table class="table">
     <thead>
     <tr>
@@ -27,7 +32,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let article of articles | orderBy: 'name'">
+    <tr *ngFor="let article of articles | filterBy: searchArticle | orderBy: 'name'">
       <td>
         <img src="data:image/png;base64,{{ article.image }}"
              alt="{{ article.name }}"
