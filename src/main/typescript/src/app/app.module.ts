@@ -23,6 +23,7 @@ import {BootstrapModalModule} from "ng2-bootstrap-modal";
 import {CartModalComponent} from "../pages/site/cart-modal/cart-modal.component";
 import {OrderConfirmationComponent} from "../pages/site/order-confirmation/order-confirmation.component";
 import {CookieModule} from "ngx-cookie";
+import {CurrencyRoundPipe} from "../pipes/currency-round.pipe";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {CookieModule} from "ngx-cookie";
     AdminListComponent,
     FormComponent,
     CartModalComponent,
-    OrderConfirmationComponent
+    OrderConfirmationComponent,
+    CurrencyRoundPipe
   ],
   imports: [
     BrowserModule,

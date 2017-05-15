@@ -9,7 +9,6 @@ export const ROUTE_CONFIG: Routes = [
     path: '',
     pathMatch: 'full',
     component: HomeComponent
-    // component: KArticleListComponent
   },
   {
     path: 'admin',
@@ -18,12 +17,10 @@ export const ROUTE_CONFIG: Routes = [
   {
     path: 'admin/edit',
     component: FormComponent
-    // component: KArticleFormComponent
   },
   {
     path: 'admin/edit/:detailLink',
     component: FormComponent
-    // component: KArticleFormComponent
   },
   {
     path: 'order',

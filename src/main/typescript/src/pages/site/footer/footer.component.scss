@@ -3,17 +3,10 @@
 .footer {
   margin-top: 100px;
   margin-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   text-align: center;
   background: $secondary-brand-color-lighter;
-  height: 210px;
-}
-
-.footerRow {
-  padding-top: 60px;
-}
-
-.iconBig {
-  height: 75px;
 }
 
 .iconSubtitle {
@@ -27,11 +20,11 @@
   margin-top: 100px;
 }
 
-.footer-table {
-  width: 100%;
+.footer-sortiment {
   margin-top: 50px;
   color: $secondary-brand-color-middle;
   text-align: center;
+  line-height: 2.5;
 }
 
 .footer-logo {
@@ -43,8 +36,4 @@
 .footer-logo img {
   height: 100px;
   width: auto;
-}
-
-.iconFooter {
-  height: 48px;
 }

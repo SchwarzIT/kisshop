@@ -1,5 +1,13 @@
 @import "../../../styles";
 
+.header {
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  top: 0px;
+  z-index: 1;
+}
+
 .header-top {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -32,18 +40,14 @@
   bottom: 0;
 }
 
-.header-navigation {
-  float: left;
-  width: 80%;
-}
-
 .header-right {
-  float: left;
   width: calc(20% - 100px);
   text-align: right;
 }
 
 .header-navigation ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -57,10 +61,17 @@
 }
 
 .header-image {
+  margin-top: 125px;
   height: 500px;
   width: 100%;
   overflow: hidden;
   background-size: cover;
+}
+
+.header-cart {
+  text-align: right;
+  right: 0px;
+  margin-right: 15px;
 }
 
 .cart-info {

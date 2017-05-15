@@ -1,38 +1,39 @@
-<div class="container">
+<div class="header">
+  <div class="container">
 
-  <div class="header-top">
-    <div class="header-logo">
-      <a href="/">
-        <img src="/assets/img/kl_logo.svg"/>
-      </a>
-    </div>
+    <div class="row header-top">
+      <div class="col-xl-1 col-sm-2">
+        <a href="/">
+          <img src="/assets/img/kl_logo.svg" routerLink="/" style="max-height: 86px"/>
+        </a>
+      </div>
 
-    <div class="header-navigation" *ngIf="showNavigation">
-      <div class="header-content">
-        <ul>
-          <li><a href="/">Sortiment</a></li>
-          <li><a href="#" (click)="showCartModal()">Warenkorb</a></li>
-          <li><a href="/admin">Administration</a></li>
-        </ul>
+      <div class="col-xl-9 col-sm-8 header-navigation" *ngIf="showNavigation">
+        <div class="header-content">
+          <ul>
+            <li><a href="/">Sortiment</a></li>
+            <li><a href="#" (click)="showCartModal()">Warenkorb</a></li>
+            <li><a href="/admin">Administration</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-xl-2">
+        <div class="header-content header-cart">
+          <ng-template [ngIf]="showCart == true">
+            <img src="/assets/icons/warenkorb.png" (click)="showCartModal()" class="clickable icon"/>
+
+            <div class="cart-info">
+              <b>{{ cartService.totalPrice | currencyRound | currency : 'EUR' : true : '1.2-2' }}</b><br/>
+              {{ cartService.cart.length }} Artikel
+            </div>
+          </ng-template>
+        </div>
       </div>
     </div>
-
-    <div class="header-right">
-      <div class="header-content">
-        <ng-template [ngIf]="showCart == true">
-          <img src="/assets/icons/warenkorb.png" (click)="showCartModal()" class="clickable icon"/>
-          <div class="cart-info">
-            <b>{{ cartService.totalPrice | currency : 'EUR' : true }}</b><br/>
-            {{ cartService.cart.length }} Artikel
-          </div>
-        </ng-template>
-
-      </div>
-    </div>
-
-    <div style="clear: both"></div>
   </div>
+</div>
 
+<div class="container">
   <div class="header-image" [ngStyle]="{'background-image': 'url(' + headerImage + ')'}" *ngIf="headerImage"></div>
-
 </div>

@@ -1,13 +1,11 @@
 <div class="footer">
 
   <div class="container ">
-    <div class="row footerRow">
-
-      <div class="col-3" *ngFor="let v of values">
-        <img src="/assets/icons/{{ v.icon }}" class="iconFooter hoverableBig"/>
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let v of values">
+        <img src="/assets/icons/{{ v.icon }}" class="iconMiddle hoverableBig"/>
         <div class="iconSubtitle">{{ v.text }}</div>
       </div>
-
     </div>
   </div>
 
@@ -16,32 +14,35 @@
 <div class="container">
   <h1 class="h1">Unser Sortiment</h1>
 
-  <table class="footer-table">
-    <tr>
-      <td><span class="clickable">Aktuelle Angebote</span></td>
-      <td><span class="clickable">Konserven & Feinkost</span></td>
-      <td><span class="clickable">Getränke</span></td>
-      <td><span class="clickable">Haushalt</span></td>
-    </tr>
-    <tr>
-      <td><span class="clickable">Obst & Gemüse</span></td>
-      <td><span class="clickable">Kühlprodukte</span></td>
-      <td><span class="clickable">Drogerie</span></td>
-      <td><span class="clickable">Zigaretten & Tabak</span></td>
-    </tr>
-    <tr>
-      <td><span class="clickable">Frühstück</span></td>
-      <td><span class="clickable">Tiefkühlkost</span></td>
-      <td><span class="clickable">Baby & Kind</span></td>
-      <td><span class="clickable"></span></td>
-    </tr>
-    <tr>
-      <td><span class="clickable">Kochen & Backen</span></td>
-      <td><span class="clickable">Süßes & Salziges</span></td>
-      <td><span class="clickable">Tierbedarf</span></td>
-      <td><span class="clickable"></span></td>
-    </tr>
-  </table>
+  <div class="footer-sortiment">
+    <div class="row">
+      <div class="col-sm-6 col-md-3"><span class="clickable">Aktuelle Angebote</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable">Konserven & Feinkost</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable">Getränke</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable">Haushalt</span></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-3"><span class="clickable">Obst & Gemüse</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable">Kühlprodukte</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable">Drogerie</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable">Zigaretten & Tabak</span></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-3"><span class="clickable">Frühstück</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable">Tiefkühlkost</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable">Baby & Kind</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable"></span></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-3"><span class="clickable">Kochen & Backen</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable">Süßes & Salziges</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable">Tierbedarf</span></div>
+      <div class="col-sm-6 col-md-3"><span class="clickable"></span></div>
+    </div>
+  </div>
 
   <div class="footer-logo">
     <a href="/">

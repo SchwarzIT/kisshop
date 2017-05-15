@@ -1,15 +1,26 @@
 <div class="container information">
 
-  <div class="information-image"
-       [ngClass]="{'information-image-left' : imageLeft, 'information-image-right' : !imageLeft }">
-    <img src="/assets/img/{{ info.imageName }}"/>
+  <div class="row" *ngIf="imageLeft">
+    <div class="col-md-6 col-sm-12 information-image">
+      <img src="/assets/img/{{ info.imageName }}"/>
+    </div>
+
+    <div class="col-md-6 col-sm-12 col-12 information-content">
+      <h2 class="headingInformation">{{ info.headline }}</h2>
+      <p>{{ info.text }}</p>
+    </div>
   </div>
 
-  <div class="information-content">
-    <h2 class="headingInformation">{{ info.headline }}</h2>
-    <p>{{ info.text }}</p>
-  </div>
+  <!-- TODO: remove duplicate code -->
+  <div class="row" *ngIf="!imageLeft">
+    <div class="col-md-6 col-sm-12 col-12 information-content">
+      <h2 class="headingInformation">{{ info.headline }}</h2>
+      <p>{{ info.text }}</p>
+    </div>
 
-  <div style="clear: both"></div>
+    <div class="col-md-6 col-sm-12 information-image">
+      <img src="/assets/img/{{ info.imageName }}"/>
+    </div>
+  </div>
 
 </div>

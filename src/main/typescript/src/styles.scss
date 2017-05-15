@@ -31,8 +31,10 @@ html, body {
   height: 100%;
 }
 
-.container {
-  width: 1400px;
+@media (min-width: 1200px) {
+  .container {
+    width: 1400px;
+  }
 }
 
 table {
@@ -77,6 +79,10 @@ table {
 
 .iconMiddle {
   height: 50px;
+}
+
+.iconBig {
+  height: 75px;
 }
 
 /* Forms */
