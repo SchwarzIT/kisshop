@@ -1,5 +1,6 @@
 <div class="container information">
 
+  <!-- Image on the left side -->
   <div class="row" *ngIf="imageLeft">
     <div class="col-md-6 col-sm-12 information-image">
       <img src="/assets/img/{{ info.imageName }}"/>
@@ -11,7 +12,7 @@
     </div>
   </div>
 
-  <!-- TODO: remove duplicate code -->
+  <!-- Image on the right side -->
   <div class="row" *ngIf="!imageLeft">
     <div class="col-md-6 col-sm-12 col-12 information-content">
       <h2 class="headingInformation">{{ info.headline }}</h2>
