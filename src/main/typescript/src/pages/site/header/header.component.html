@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="row header-top">
-      <div class="col-xl-1 col-sm-2">
+      <div class="col-xl-1 col-sm-2 header-logo">
         <a href="/">
           <img src="/assets/img/kl_logo.svg" routerLink="/" style="max-height: 86px"/>
         </a>
@@ -12,7 +12,7 @@
         <div class="header-content">
           <ul>
             <li><a href="/">Sortiment</a></li>
-            <li><a href="#" (click)="showCartModal()">Warenkorb</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal">Warenkorb</a></li>
             <li><a href="/admin">Administration</a></li>
           </ul>
         </div>
@@ -21,7 +21,7 @@
       <div class="col-xl-2">
         <div class="header-content header-cart">
           <ng-template [ngIf]="showCart == true">
-            <img src="/assets/icons/warenkorb.png" (click)="showCartModal()" class="clickable icon"/>
+            <img src="/assets/icons/warenkorb.png" data-toggle="modal" data-target="#myModal" class="clickable icon"/>
 
             <div class="cart-info">
               <b>{{ cartService.totalPrice | currencyRound | currency : 'EUR' : true : '1.2-2' }}</b><br/>
@@ -33,6 +33,8 @@
     </div>
   </div>
 </div>
+
+<app-cart-modal title="Warenkorb" noArticlesMessage="Ihr Warenkorb ist leer"></app-cart-modal>
 
 <div class="container">
   <div class="header-image" [ngStyle]="{'background-image': 'url(' + headerImage + ')'}" *ngIf="headerImage"></div>

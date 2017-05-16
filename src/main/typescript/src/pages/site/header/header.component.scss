@@ -13,14 +13,9 @@
   margin-bottom: 20px;
 }
 
-.header-logo {
-  float: left;
-  width: 100px;
-}
-
 .header-logo img {
-  height: 84px;
-  width: auto;
+  width: 100%;
+  max-height: 86px;
 }
 
 .header-navigation,

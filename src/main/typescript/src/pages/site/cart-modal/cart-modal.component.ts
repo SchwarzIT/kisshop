@@ -1,31 +1,30 @@
-import {Component} from "@angular/core";
-import {DialogComponent, DialogService} from "ng2-bootstrap-modal";
+import {Component, Input, OnInit} from "@angular/core";
 import {Article} from "../../../entities/Article";
 import {CartService} from "../../../services/cart.service";
-
-export interface ConfirmModel {
-  title: string;
-  articles: Article[];
-}
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cart-modal',
   templateUrl: './cart-modal.component.html',
   styleUrls: ['./cart-modal.component.scss']
 })
-export class CartModalComponent extends DialogComponent<ConfirmModel, boolean> implements ConfirmModel {
+export class CartModalComponent implements OnInit {
 
-  title: string = "";
-  message: string = "Ihr Warenkorb ist leer";
+  @Input("title") title: string = "";
+  @Input("noArticlesMessage") message: string = "";
   articles: Article[] = [];
 
-  constructor(dialogService: DialogService, private cartService: CartService) {
-    super(dialogService);
+  constructor(private cartService: CartService, private router: Router) {
+
+  }
+
+  ngOnInit(): void {
+    this.articles = this.cartService.cart;
   }
 
   confirm() {
-    this.result = true;
-    this.close();
+    this.cartService.clearCart();
+    this.router.navigate(['/order']);
   }
 
   increaseArticleNumber(pArticle: Article) {

@@ -1,8 +1,6 @@
 import {Component, Input} from "@angular/core";
 import {CartService} from "../../../services/cart.service";
-import {DialogService} from "ng2-bootstrap-modal";
-import {CartModalComponent} from "../cart-modal/cart-modal.component";
-import {Router} from "@angular/router";
+
 @Component({
   selector: 'app-header',
   templateUrl: 'header.component.html',
@@ -16,26 +14,8 @@ export class HeaderComponent {
   @Input("showNavigation") showNavigation: boolean = true;
   @Input("headerImage") headerImage: string = "/assets/img/headerImage.jpg";
 
-  constructor(pCartService: CartService, private dialogService: DialogService, private router: Router) {
+  constructor(pCartService: CartService) {
     this.cartService = pCartService;
-  }
-
-  showCartModal() {
-
-    this.dialogService.addDialog(CartModalComponent, {
-      title: 'Warenkorb',
-      articles: this.cartService.cart
-    }).subscribe((isConfirmed) => {
-
-      if (isConfirmed) {
-        this.cartService.clearCart();
-
-        this.router.navigate(['/order']);
-      }
-
-    });
-
-
   }
 
 }

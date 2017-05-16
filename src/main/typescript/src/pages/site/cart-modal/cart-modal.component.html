@@ -1,57 +1,61 @@
-<div class="modal-dialog">
-  <div class="modal-content">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-    <div class="modal-header">
-      <h2 class="modal-title">{{title}}</h2>
-      <button type="button" class="close" (click)="close()">&times;</button>
-    </div>
+      <div class="modal-header">
+        <h2 class="modal-title">{{title}}</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
-    <div class="modal-body">
-      <p *ngIf="articles?.length <= 0">{{ message }}</p>
+      <div class="modal-body">
+        <p *ngIf="articles?.length <= 0">{{ message }}</p>
 
-      <ng-template [ngIf]="articles?.length > 0">
-        <div class="cart-article" *ngFor="let article of articles">
-          <div class="row">
-            <div class="cart-article-description col-3 col-xl-6">
-              <span class="cart-article-description-name">{{ article.name }}</span>
-              <br/>
-              <span class="cart-article-description-description">{{ article.description }}</span>
-            </div>
-            <div class="cart-article-count col-3 col-xl-2">
-              <img src="/assets/icons/add-middle.svg" class="icon" (click)="increaseArticleNumber(article)"/>
-              {{ article.numberInCart }}
-              <img src="/assets/icons/remove-middle.svg" class="icon" (click)="decreaseArticleNumber(article)"/>
-            </div>
-            <div class="cart-article-price col-3 col-xl-2">
+        <ng-template [ngIf]="articles?.length > 0">
+          <div class="cart-article" *ngFor="let article of articles">
+            <div class="row">
+              <div class="cart-article-description col-3 col-xl-6">
+                <span class="cart-article-description-name">{{ article.name }}</span>
+                <br/>
+                <span class="cart-article-description-description">{{ article.description }}</span>
+              </div>
+              <div class="cart-article-count col-3 col-xl-2">
+                <img src="/assets/icons/add-middle.svg" class="icon" (click)="increaseArticleNumber(article)"/>
+                {{ article.numberInCart }}
+                <img src="/assets/icons/remove-middle.svg" class="icon" (click)="decreaseArticleNumber(article)"/>
+              </div>
+              <div class="cart-article-price col-3 col-xl-2">
               <span
                 [ngClass]="{'price-cross' : article.promotionPrice}">{{ article.price | currency : 'EUR' : true }}</span>
-              <span class="modal-promotionPrice" *ngIf="article.promotionPrice">{{ article.promotionPrice | currency : 'EUR' : true }}</span>
-            </div>
-            <div class="cart-article-totalPrice col-3 col-xl-2">
-              {{ article.numberInCart * (article.promotionPrice ? article.promotionPrice : article.price) | currency :
-              'EUR' : true }}
+                <span class="modal-promotionPrice" *ngIf="article.promotionPrice">{{ article.promotionPrice | currency : 'EUR' : true }}</span>
+              </div>
+              <div class="cart-article-totalPrice col-3 col-xl-2">
+                {{ article.numberInCart * (article.promotionPrice ? article.promotionPrice : article.price) | currency :
+                'EUR' : true }}
+              </div>
             </div>
           </div>
-        </div>
 
-        <hr style="border: 1px solid #000;">
+          <hr style="border: 1px solid #000;">
 
-        <div class="row">
-          <div class="col-0 col-xl-6"></div>
-          <div class="col-8 col-xl-4">
-            <span class="cart-totalPrice-label">Gesamtbetrag</span>
-            <br/>
-            <span class="cart-MwSt-label">inkl. Mehrwertsteuer</span>
+          <div class="row">
+            <div class="col-0 col-xl-6"></div>
+            <div class="col-8 col-xl-4">
+              <span class="cart-totalPrice-label">Gesamtbetrag</span>
+              <br/>
+              <span class="cart-MwSt-label">inkl. Mehrwertsteuer</span>
+            </div>
+            <div class="cart-totalPrice col-4 col-xl-2">{{ cartService.totalPrice | currency : 'EUR' : true }}</div>
           </div>
-          <div class="cart-totalPrice col-4 col-xl-2">{{ cartService.totalPrice | currency : 'EUR' : true }}</div>
-        </div>
 
-        <hr style="border: 1px solid #000;">
-      </ng-template>
-    </div>
+          <hr style="border: 1px solid #000;">
+        </ng-template>
+      </div>
 
-    <div class="modal-footer" *ngIf="articles?.length > 0">
-      <button type="button" class="btn btn-secondary" (click)="confirm()">Jetzt bestellen</button>
+      <div class="modal-footer" *ngIf="articles?.length > 0">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="confirm()">Jetzt bestellen</button>
+      </div>
     </div>
   </div>
 </div>
